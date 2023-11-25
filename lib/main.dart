@@ -1,6 +1,15 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  if(kIsWeb){
+           await Firebase.initializeApp(options: FirebaseOptions(apiKey: "AIzaSyCBqtfQgaBnoB1fUJRqPg2xQBk5njX4nwU", appId: "1:708425008549:web:834bb971c497bf1e3bd44c", messagingSenderId: "708425008549", projectId: "test-project-12b3d"));
+
+  }
+  await Firebase.initializeApp();
+  
   runApp(const MyApp());
 }
 
